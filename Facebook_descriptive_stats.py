@@ -95,15 +95,15 @@ url_params["limit"] = 100
 
 
 #
-#raw_FB_data = requests.get(FB_url, url_params)
-#
-#json_FB_data = json.loads(raw_FB_data.text)
+raw_FB_data = requests.get(FB_url, url_params)
 
-#pprint.pprint(json_FB_data)
-#fobj = open("facebookdataSAM.txt", "w")
-#pickle.dump(json_FB_data, fobj)
-#fobj.close()
-fobj1 = open("facebookdataSAM.txt", 'r') #retrieving saved data from the disk
+json_FB_data = json.loads(raw_FB_data.text)
+
+pprint.pprint(json_FB_data)
+fobj = open("facebookdata.txt", "w")
+pickle.dump(json_FB_data, fobj)
+fobj.close()
+fobj1 = open("facebookdata.txt", 'r') #retrieving saved data from the disk
 json_FB_data = pickle.load(fobj1)
 fobj1.close()
 
